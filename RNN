@@ -2,3 +2,10 @@ import numpy as np
 import tensorflow as tf
 from tensorflow.contrib.rnn import *
 import matplotlib.pyplot as plt
+num_neurons = 100
+num_inputs = 1
+num_outputs = 1
+symbol = 'goog' # amzn
+epochs = 500
+seq_len = 20 
+learning_rate = 0.001
