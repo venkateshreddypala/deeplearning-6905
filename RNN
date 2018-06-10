@@ -44,3 +44,18 @@ loss = tf.reduce_mean(tf.square(outputs - y))
 optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate)
 training_op = optimizer.minimize(loss)
 
+init = tf.global_variables_initializer()
+saver = tf.train.Saver()
+
+with tf.Session() as sess:
+    init.run()
+
+    count = 0
+    for _ in range(epochs):
+        n=0
+        sess.run(training_op, feed_dict={X: X_train, y: y_train})
+        count += 1
+        if count % 10 == 0:
+            saver.save(sess, "/tmp/" + symbol + "_model.ckpt") 
+            loss_val = loss.eval(feed_dict={X: X_train, y: y_train})
+            print(count, "loss:", loss_val)
