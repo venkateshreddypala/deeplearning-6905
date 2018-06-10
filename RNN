@@ -23,3 +23,8 @@ row = int(round(0.9 * result.shape[0]))
 train = result[:row, :] 
 test = result[row:, :]
 np.random.shuffle(train) 
+X_train = train[:, :-1] # all rows with all columns except the last one 
+X_test = test[:, :-1] # each row contains seq_len + 1 columns
+
+y_train = train[:, 1:] 
+y_test = test[:, 1:]
