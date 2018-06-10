@@ -59,3 +59,36 @@ with tf.Session() as sess:
             saver.save(sess, "/tmp/" + symbol + "_model.ckpt") 
             loss_val = loss.eval(feed_dict={X: X_train, y: y_train})
             print(count, "loss:", loss_val)
+            
+            
+            
+            
+            correct = 0
+    y_pred = sess.run(outputs, feed_dict={X: X_test}) 
+    targets = []
+    predictions = []
+    for i in range(y_pred.shape[0]):
+        input = X_test[i]
+        target = y_test[i]
+        prediction = y_pred[i]
+
+        targets.append(target[-1][0])
+        predictions.append(prediction[-1][0])
+
+        if target[-1][0] >= input[-1][0] and prediction[-1][0] >= 
+        input[-1][0]:
+            correct += 1
+        elif target[-1][0] < input[-1][0] and prediction[-1][0] <   
+        input[-1][0]:
+            correct += 1
+            
+            
+            
+            total = len(X_test)
+    xs = [i for i, _ in enumerate(y_test)]
+    plt.plot(xs, predictions, 'r-', label='prediction') 
+    plt.plot(xs, targets, 'b-', label='true')
+    plt.legend(loc=0)
+    plt.title("%s - %d/%d=%.2f%%" %(symbol, correct, total, 
+               100*float(correct)/total))
+    plt.show()
