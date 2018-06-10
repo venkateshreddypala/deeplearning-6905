@@ -34,3 +34,8 @@ y_train = np.reshape(y_train, (y_train.shape[0], y_train.shape[1], num_outputs))
 y_test = np.reshape(y_test, (y_test.shape[0], y_test.shape[1], num_outputs)) 
 X = tf.placeholder(tf.float32, [None, seq_len, num_inputs])
 y = tf.placeholder(tf.float32, [None, seq_len, num_outputs])
+
+cell = tf.contrib.rnn.OutputProjectionWrapper(
+    tf.contrib.rnn.BasicRNNCell(num_units=num_neurons, activation=tf.nn.relu), output_size=num_outputs)
+outputs, _ = tf.nn.dynamic_rnn(cell, X, dtype=tf.float32)
+
