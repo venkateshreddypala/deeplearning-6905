@@ -19,3 +19,6 @@ for i in range(len(d) - seq_len - 1):
     result.append(d[i: i + seq_len + 1])
 
 result = np.array(result)
+row = int(round(0.9 * result.shape[0]))
+train = result[:row, :] 
+test = result[row:, :]
