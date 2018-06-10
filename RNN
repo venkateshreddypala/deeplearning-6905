@@ -9,3 +9,13 @@ symbol = 'goog' # amzn
 epochs = 500
 seq_len = 20 
 learning_rate = 0.001
+f = open(symbol + '.txt', 'r').read()
+data = f.split('\n')[:-1] # get rid of the last '' so float(n) works
+data.reverse()
+d = [float(n) for n in data]
+
+result = []
+for i in range(len(d) - seq_len - 1):
+    result.append(d[i: i + seq_len + 1])
+
+result = np.array(result)
