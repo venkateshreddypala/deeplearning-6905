@@ -75,16 +75,12 @@ with tf.Session() as sess:
         targets.append(target[-1][0])
         predictions.append(prediction[-1][0])
 
-        if target[-1][0] >= input[-1][0] and prediction[-1][0] >= 
-        input[-1][0]:
+        if target[-1][0] >= input[-1][0] and prediction[-1][0] >= input[-1][0]:
             correct += 1
-        elif target[-1][0] < input[-1][0] and prediction[-1][0] <   
-        input[-1][0]:
+        elif target[-1][0] < input[-1][0] and prediction[-1][0] < input[-1][0]:
             correct += 1
-            
-            
-            
             total = len(X_test)
+            
     xs = [i for i, _ in enumerate(y_test)]
     plt.plot(xs, predictions, 'r-', label='prediction') 
     plt.plot(xs, targets, 'b-', label='true')
