@@ -18,9 +18,11 @@ Now in order to use this key to get the most reccent datasets, you will need to 
 command given below for both the goog dataset and the amzn dataset.
 
 
-'''
+```
+
 curl -o daily_amzn.csv "https://www.alphavantage.co/query? function=TIME_SERIES_DAILY&symbol=amzn&apikey=<APIKEYHERE>&datatype=csv&outputsize=full"
 
 curl -o daily_goog.csv "https://www.alphavantage.co/query? function=TIME_SERIES_DAILY&symbol=amzn&apikey=<APIKEYHERE>&datatype=csv&outputsize=full"
-'''
+ 
+```
 
