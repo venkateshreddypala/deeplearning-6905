@@ -11,3 +11,6 @@ I have done this on Mac OS, by using this on my terminal I got an CSV for Amazon
 
 curl -o daily_amzn1.csv "https://www.alphavantage.co/query? function=TIME_SERIES_DAILY&symbol=amzn&apikey=< # Your  API KEY #>&datatype=csv&outputsize=full"
 
+I got the following data on the CSV timestamp,	open,	high,	low	close,	volume, of which I seperated the low close.
+
+
