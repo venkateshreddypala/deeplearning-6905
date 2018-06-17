@@ -14,6 +14,7 @@ To get the most recent datasets for the RNN program, you will need to get an API
 1. Head to https://www.alphavantage.co/ and click on "GET YOUR FREE API KEY TODAY"
 2. Enter in your information then click "GET FREE API KEY"
 
+#### Terminal commands to receive most recent datasets
 Now in order to use this key to get the most reccent datasets, you will need to enter it into the terminal
 command given below for both the goog dataset and the amzn dataset.
 
