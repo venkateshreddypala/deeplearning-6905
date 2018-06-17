@@ -26,7 +26,7 @@ curl -o daily_goog.csv "https://www.alphavantage.co/query? function=TIME_SERIES_
  
 ```
 
-I got the following data on the CSV timestamp, open, high, low close, volume, of which I seperated the low close.
+We got the following data on the CSV timestamp, open, high, low close, volume, of which I seperated the low close.
 
 For the RNN part we used two popular libraries Tensor Flow and Keras :
 1. https://github.com/venkateshreddypala/deeplearning-6905/blob/master/RNN%20Notebook.ipynb
